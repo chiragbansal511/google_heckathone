@@ -3,6 +3,7 @@ import numpy as np
 import pandas
 import sklearn
 import pickle
+import random
 
 # importing model
 model = pickle.load(open('crop_predction_model.pkl','rb'))
@@ -43,9 +44,9 @@ def predict():
         result = "{} is the best crop to be cultivated right there".format(crop)
     else:
         result = "Sorry, we could not determine the best crop to be cultivated with the provided data."
+
+
     return render_template('index.html',result = result)
-
-
 
 
 # python main
